@@ -1,2 +1,2 @@
-# Projeto_ICS_Turmas_da_Escola
+# Projeto de Redes ICS Turmas_da_Escola
 Projeto da disciplina de ICS
