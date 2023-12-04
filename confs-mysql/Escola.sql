@@ -19,6 +19,7 @@ CREATE TABLE Turma (
     ano INT NOT NULL,
     professor_id INT,
     FOREIGN KEY (professor_id) REFERENCES Professor(professor_id)
+    FOREIGN KEY (id) REFERENCES Aluno(id)
 );
 
 -- Tabela Professor
