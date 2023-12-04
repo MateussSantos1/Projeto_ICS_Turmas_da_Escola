@@ -18,7 +18,7 @@ CREATE TABLE Turma (
     nome_turma VARCHAR(50) NOT NULL,
     ano INT NOT NULL,
     professor_id INT,
-    FOREIGN KEY (professor_id) REFERENCES Professor(professor_id)
+    FOREIGN KEY (professor_id) REFERENCES Professor(professor_id),
     FOREIGN KEY (id) REFERENCES Aluno(id)
 );
 
