@@ -1,29 +1,39 @@
 <?php
-$servidor = '192.168.100.20';
-$usuario = 'ics';
-$senha = 'conectado';
-$nomebd = 'sistemanotas';
-$conexao = mysqli_connect($servidor, $usuario, $senha, $nomebd);
-if(!$conexao) {
-die("Conexao falhou!!!" + mysqli_connect_error());
-}
-highlight_file('connection.php');
-?>
-<?php
+include('verifica_login.php');
 include('connection.php');
 $professor = isset($_GET['id']) ? intval($_GET['id']) : 0;
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 $nome = $_POST["nome_professor"];
-$senha = $_POST["senha_professor"];
 $turmaId = $_POST["turma_id"];
+$novadisciplina = $_POST["disciplina"];
 $professorId = intval($_POST["id"]);
-$sql = "UPDATE professor SET nome_professor = '$nome', senha_professor = '$s
-enha', turma_id = '$turmaId' WHERE professor_id = '$professorId'";
+$sqlVerificar = "SELECT * FROM professor WHERE turma_id = '$tu
+rmaId' AND disciplina = '$novadisciplina' AND professor_id != $pro
+fessorId";
+$resultVerificar = $conexao->query($sqlVerificar);
+if($resultVerificar->num_rows > 0) {
+echo "Não é possivel atualizar a disciplina, já existe outro p
+rofessor encarregado dela";
+echo "<a href='siteadm.php'>Voltar</a>";
+exit();
+}
+$sql = "SELECT * FROM professor";
+if ($turmaId > 0) {
+$sql = "UPDATE professor SET nome_professor = '$nome', discipl
+ina = '$novadisciplina', turma_id = '$turmaId' WHERE professor_id
+= '$professorId'";
+}
+if ($turmaId <= 0){
+$sql = "UPDATE professor SET nome_professor = '$nome', discipl
+ina = '$novadisciplina', turma_id = null WHERE professor_id = '$pr
+ofessorId'";
+}
 if($conexao->query($sql) === TRUE){
 echo "Alterações salvas com suceso =)";
-} else{
-echo "Erro ao salvar as seguintes alteraçoes: " . $conexao->error;
-}
-}
-highlight_file('processar_edicao_professor.php');
+header("Location: siteadm.php");
+$conexao->close();
+exit();
+} }
+else{echo"Algo Inesperado ocorreu:" . $conexao->error;}
+exit();
 ?>
