@@ -1,5 +1,5 @@
 <h1 align="center">Educa.Net Sites - ICS</h1>
-<h3 align="center">A passionate frontend developer from India</h3>
+<h3 align="center">xxxxxxxxxxxxxxxxxxxx</h3>
 
 <h3 align="left">Projeto ICS</h3>
 <li align="left">Site Front-End ( ifrn-siteics.com) </li>
