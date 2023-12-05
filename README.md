@@ -6,6 +6,14 @@
 <a href="ifrn-siteicsadm.com"><li align="left">Site Back-End ( ifrn-siteicsADM.com) </li></a>
 <p align="left">
 </p>
+
+<h3 align="left">Vídeos do Projeto</h3>
+<a href="https://youtu.be/D5uix-cZLFg?si=xLRzfe37epE7vVAU"><li align="left">Acesso aos 2 sites</li></a>
+<a href="https://youtu.be/nAug9N0cExA?si=97NdQvThsOKnTFtY"><li align="left">Utilização Completa da Aplicação</li></a>
+<p align="left">
+</p>
+
+
 <p>
   <h3>Diagrama ER</h3>
 <a href="confs-mysql/Diagrama_ER.png"><img width="auto" height="300px" src="confs-mysql/Diagrama_ER.png"></a>
