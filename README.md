@@ -1,5 +1,4 @@
 <h1 align="center">Educa.Net Sites - ICS</h1>
-<h3 align="center">xxxxxxxxxxxxxxxxxxxx</h3>
 
 <h3 align="left">Projeto ICS</h3>
 <a href="ifrn-siteics.com"><li align="left">Site Front-End ( ifrn-siteics.com) </li></a>
