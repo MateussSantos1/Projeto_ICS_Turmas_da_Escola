@@ -1,0 +1,22 @@
+<?php
+include('verifica_login.php');
+include('connection.php');
+$turma_id = isset($_GET['id']) ? intval($_GET['id']) : 0;
+$sqlAtualizarAluno = "UPDATE alunos SET turma_id = null WHERE
+turma_id = $turma_id";
+$sqlAtualizarProfessores = "UPDATE professor SET turma_id = nu
+ll WHERE turma_id = $turma_id";
+$conexao->query($sqlAtualizarAluno);
+$sqlExcluirTurma = "DELETE FROM turma WHERE turma_id = $turma_
+id";
+if($conexao->query($sqlExcluirTurma) === TRUE) {
+echo "Turma excluída com sucesso.";
+header("Location: siteadm.php");
+$sqlAtualizarProfessores = "UPDATE professor SET turma_id = nu
+ll WHERE turma_id = $turma_id";
+$conexao->query($sqlAtualizarProfessores);
+} else{
+echo "Erro ao excluir turma: " . $conexao->error;
+}
+$conexao->close();
+?>
