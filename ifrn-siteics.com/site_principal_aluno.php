@@ -13,24 +13,24 @@ session_destroy();
 header("Location: login_aluno.php");
 exit();
 }
+highlight_file("site_principal_aluno.php");
 $alunologado = $_SESSION['id'];
 $sqlAluno = "SELECT * FROM alunos WHERE id = $alunologado";
 $resultAluno = $mysqli->query($sqlAluno);
 if ($resultAluno->num_rows > 0) {
 $aluno = $resultAluno->fetch_assoc();
 $turmaId = $aluno['turma_id'];
-if($turmaId !== null) {
-$sqlTurma = "SELECT * FROM turma WHERE turma_id = $turmaId ";
+$sqlTurma = "SELECT * FROM turma WHERE turma_id = $turmaId";
 $resultTurma = $mysqli->query($sqlTurma);
 if ($resultTurma->num_rows > 0) {
 $turma = $resultTurma->fetch_assoc();
-}} else {
+} else {
 echo"Turma não encontrada.";
 }
 } else{
 echo"Aluno não encontrado.";
 }
-highlight_file('site_principal_aluno.php');
+$mysqli->close();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -52,10 +52,9 @@ ir</button>
 
 </form></header>
 <div class="container">
-<h2 style="text-align: left;">Minhas Informações</h2>
+<h2>Minhas Informações</h2>
 
-<div> <table style="margin-bottom: 0.5em;">
-
+<table>
 <thead>
 <tr>
 <th>Nome</th>
@@ -71,21 +70,9 @@ ir</button>
 </tr>
 </tbody>
 </table>
-</div>
 
-<div style="margin-bottom:2em;justify-content:left; align-
-itens:left; text-align:left;">
-
-<button><a style="text-decoration: none;color:white;" href="ed
-itar_aluno.php">Editar Minhas Informações</a></button>
-</div>
-
-<h2 style="text-align:left;">Informações da Minha Turma</h
-
-2>
-
-<div class="tabela" style="width:112%;">
-<table style="margin-bottom: 4em;">
+<h2>Informações da Minha Turma</h2>
+<table>
 <thead>
 <tr>
 <th>Nome</th>
