@@ -16,6 +16,7 @@
 <a href="https://docs.google.com/presentation/d/1G1qaYYSCu0X2ngz83z6XAgCmRItSAsyzEByYoBxkNs8/edit?usp=sharing"><li align="left">Slides do Projeto</li></a>
 
 <h3 align="left">(Extra) ----- Site Upado no 000_Web_Host</h3>
+<h3 align="left">Id_adm: "39" && Senha: "bagrealberto" </h3>
 <a href="https://educanetis.000webhostapp.com/"><li align="left">Site Upado</li></a>
 
 <p>
